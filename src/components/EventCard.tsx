@@ -1,0 +1,3 @@
+import { ArrowUpRight, Clock3, MapPin } from 'lucide-react';
+import { ExtremeEvent } from '../types/weather';
+export default function EventCard({event,onClick}:{event:ExtremeEvent;onClick?:()=>void}){return <button className="event-card" onClick={onClick}><div className="event-header"><span className={`risk-badge ${event.severity.toLowerCase()}`}>{event.severity}</span><ArrowUpRight size={16}/></div><h3>{event.type}</h3><div className="event-meta"><span><MapPin size={13}/>{event.location.name}</span><span><Clock3 size={13}/>{event.duration}</span></div><div className="event-stats"><span>Anomaly <b>{event.anomalyMagnitude}</b></span><span>Confidence <b>{Math.round(event.confidence*100)}%</b></span></div><p>{event.explanation}</p></button>}

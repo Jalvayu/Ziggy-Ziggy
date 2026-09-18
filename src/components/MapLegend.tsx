@@ -1,0 +1,1 @@
+export function MapLegend(){return <div className="map-legend"><strong>ANOMALY RISK</strong>{[['normal','Normal'],['watch','Watch'],['high','High'],['extreme','Extreme']].map(([c,l])=><span key={c}><i className={`legend-dot ${c}`}/>{l}</span>)}</div>}
